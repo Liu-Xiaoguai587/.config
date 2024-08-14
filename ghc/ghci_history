@@ -1,0 +1,68 @@
+:q
+takeClone 4 [1,2,3]
+takeClone 3 [1,2,3]
+takeClone 12 [1,2,3]
+:r
+takeClone 12 [1,2,3,4,5,6,7,8,90,0]
+takeClone 24 [1,2,3,4,5,6,7,8,90,0]
+takeClone 20 [1,2,3,4,5,6,7,8,90,0]
+takeClone 10 [1,2,3,4,5,6,7,8,90,0]
+takeClone 3 [1,2,3,4,5,6,7,8,90,0]
+:r
+3 ++ [1, 2]
+3:[1,2]
+takeClone 3 [1,2,3,4]
+:r
+takeClone 3 [1,2,3,4]
+takeClone 3 [1,2,3,4,5]
+:r
+takeClone 3 [1,2,3,4,5]
+:r
+takeClone 3 [1, 2, 3, 4, 5, 6, 7]
+:r
+take 3 [1, 2, 3, 4, 5, 6]
+factorial 4
+factorial 3
+factorial 2
+factorial 1
+:r
+reverse [1, 2, 3]
+length [1, 2, 3, 4, 5]
+foldr (++) "11" ["22", "33", "44"]
+foldl (++) "11" ["22", "33", "44"]
+sum_foldl [1, 2, 3]
+let sum_foldl xs = foldl (+) 0 xs
+foldl (+) 10 [1, 2, 3]
+foldl (+) 10 [1, 2, 3, 4, 5]
+foldr (+) 10 [1, 2, 3, 4, 5]
+applyTwice increment 5
+:r
+applyTwice increment 5
+increment 5
+:r
+addNum (10, 20)
+addNum 10 20
+:r
+sum someNumbers 
+someNumbers 
+let someNumbers = [10, 20, 30, 40, 50]
+sunNumbers 
+:r
+ls
+:clean
+:clear
+:r
+ls
+absolute (-10)
+absolute -10
+absolute 10
+:r
+:r
+ls
+fibonacci 10
+:r
+ls
+fibonacci 10
+:l baby.hs 
+:quit
+quit

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=imwheel -b "4 5"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[zh_CN]=imwhere
+Name=imwhere
+Comment[zh_CN]=
+Comment=

@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+mark() {
+    MARK_POINT=$(pwd)
+    echo "mark: $MARK_POINT"
+}
+
+jmp() {
+    cd $MARK_POINT || exit
+}
+
+peek() {
+    echo -e "\e[32mmark: \e[0m$MARK_POINT"
+}

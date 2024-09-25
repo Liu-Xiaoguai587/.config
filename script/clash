@@ -1,0 +1,11 @@
+#!/bin/bash
+
+clash() {
+    if [[ "$1" == "on" ]]; then
+		sudo bash /opt/clash-for-linux/start.sh
+    elif [[ "$1" == "off" ]]; then
+		sudo bash /opt/clash-for-linux/shutdown.sh
+    else
+        echo 'please enter "on" or "off"'
+    fi
+}

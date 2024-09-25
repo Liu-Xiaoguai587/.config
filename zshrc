@@ -14,7 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,12 +77,28 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+##################
+#                #
+#     plugins    #
+#                #
+##################
 plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-vi-mode
 )
 
+##################
+#                #
+#     plugins    #
+#     setting    #
+#                #
+##################
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
 source $ZSH/oh-my-zsh.sh
+
+
 
 # User configuration
 
@@ -110,15 +127,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#pure
-#fpath+=($HOME/.zsh/pure)
 
-#autoload -U promptinit; promptinit
-#prompt pure
 
-#some alias
+###################
+#                 #
+#      alias      #
+#                 #
+###################
 alias cr="cargo run"
 alias v="nvim"
 alias py="python3"
@@ -135,19 +152,55 @@ alias tarunzip="tar -xjvf"
 alias tarzip="tar -czvf"
 alias tarlist="tar -tzvf"
 alias mecard="cd /media/liu/426a8a98-e020-457c-9825-4ceb9e8f5a9d"
-alias sharedir="sudo mount -t cifs //192.168.137.1/Share ~/share -o username='Liu',password='1244',vers=2.0"
+alias sharedir="sudo mount -t cifs //192.168.250.162/Share ~/Share -o username='Liu',password='1244',vers=2.0"
 alias packsize="sudo dpkg-query -Wf '${Installed-Size} \t${Package}\n' | sort -n"
 alias cfw="~/Local/App/Clash/cfw&"
 alias nvimconfig="cd ~/.config/nvim/"
+alias suv="sudo vim"
 
 #unbind 
 bindkey -r "^S"
 
-#source script
-source ~/.script/mark.sh
+##################
+#                #
+#     script     #
+#                #
+##################
+#source ~/.script/mark.sh
+#source ~/.config/script/clash
+source ~/.config/script/clash
+source ~/.config/script/mark
+source /etc/profile.d/clash.sh
+
+
+
+#################
+#               #
+#      app      #
+#               #
+#################
+# cargo
 source ~/.cargo/env
 
-[ -f "/home/liu/.ghcup/env" ] && . "/home/liu/.ghcup/env" # ghcup-env
+#nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#starship
+eval "$(starship init zsh)"
+
+#brew linux
+#(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/liuxiaoguai/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#ghcup
+[ -f "/home/liuxiaoguai/.ghcup/env" ] && . "/home/liuxiaoguai/.ghcup/env" # ghcup-env
+
+###################
+#                 #
+#     startup     #
+#                 #
+###################
+neofetch
+

@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -152,11 +152,15 @@ alias tarunzip="tar -xjvf"
 alias tarzip="tar -czvf"
 alias tarlist="tar -tzvf"
 alias mecard="cd /media/liu/426a8a98-e020-457c-9825-4ceb9e8f5a9d"
-alias sharedir="sudo mount -t cifs //192.168.5.1/Share ~/Share -o username='Liu',password='78910',vers=2.0"
+#alias sharedir="sudo mount -t cifs //192.168.5.1/Share ~/Share -o username='Liu',password='78910',vers=2.0"
+alias sharedir="sudo mount -t cifs //10.58.2.240/Share ~/Share -o username='Liu',password='78910',vers=2.0"
 alias packsize="sudo dpkg-query -Wf '${Installed-Size} \t${Package}\n' | sort -n"
 alias cfw="~/Local/App/Clash/cfw&"
 alias nvimconfig="cd ~/.config/nvim/"
 alias suv="sudo vim"
+alias figlet="figlet -d '/usr/share/figlet'"
+alias icat="kitty +kitten icat"
+alias clock="tty-clock -cC 5"
 
 #unbind 
 bindkey -r "^S"
@@ -170,7 +174,7 @@ bindkey -r "^S"
 #source ~/.config/script/clash
 source ~/.config/script/clash
 source ~/.config/script/mark
-source /etc/profile.d/clash.sh
+#source /etc/profile.d/clash.sh
 
 
 
@@ -183,16 +187,16 @@ source /etc/profile.d/clash.sh
 source ~/.cargo/env
 
 #nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #starship
 eval "$(starship init zsh)"
 
 #brew linux
 #(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/liuxiaoguai/.zshrc
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #ghcup
 [ -f "/home/liuxiaoguai/.ghcup/env" ] && . "/home/liuxiaoguai/.ghcup/env" # ghcup-env
@@ -202,5 +206,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #     startup     #
 #                 #
 ###################
-neofetch
-
+~/.config/neofetch/ascii-art/neofetch_with_ascii_art
+pulseaudio -k

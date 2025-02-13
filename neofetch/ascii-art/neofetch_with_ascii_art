@@ -1,0 +1,11 @@
+#!/usr/bin/lua
+local dir_locate = "~/.config/neofetch/ascii-art/"
+
+local handle = assert(io.popen("ls " .. dir_locate .. " | wc -l", "r"))
+local file_count = tonumber(assert(handle:read("*a")))
+handle:close()
+
+local random_number = math.random(file_count - 1)
+--print(random_number)
+
+os.execute("neofetch --ascii ~/.config/neofetch/ascii-art/ascii_art_" .. random_number)
